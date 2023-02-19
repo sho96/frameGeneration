@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-from tqdm import tqdm
 
 def calcfast(img, vectorField):
     shape = vectorField.shape
@@ -22,7 +21,7 @@ writer = cv2.VideoWriter(r"result.mp4", fourcc, fps, (1280, 720))
 
 ret, prevFrame = cap.read()
 
-for i in tqdm(range(length-1)):
+for i in range(length-1):
     ret, frame = cap.read()
     if not ret:
         break
