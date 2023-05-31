@@ -6,7 +6,7 @@ def calccupy(img, vectorField):
     mapx_base, mapy_base = cp.meshgrid(cp.arange(shape[1]), cp.arange(shape[0]))
     mapx = mapx_base - vectorField[:,:,0]/2
     mapy = mapy_base - vectorField[:,:,1]/2
-    return cv2.remap(img, mapx.get().astype(np.float32), mapy.get().astype(np.float32), cv2.INTER_NEAREST)
+    return cv2.remap(img, mapx.get().astype(cp.float32), mapy.get().astype(cp.float32), cv2.INTER_NEAREST)
 
 quality = 15
 
